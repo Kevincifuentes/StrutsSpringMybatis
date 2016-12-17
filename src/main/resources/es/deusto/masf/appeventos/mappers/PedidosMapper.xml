@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="es.deusto.masf.appeventos.mappers.EventosMapper.PedidosMapper">
+
+	<select	id="getPedidosId" parameterType="String" resultType="Pedido">
+		SELECT * FROM PEDIDOS WHERE idUsuario=#{id}
+	</select>
+	
+	<select	id="getProductosPedido" parameterType="int" resultType="Producto">
+		SELECT * from PRODUCTOS join PEDPROD on PRODUCTOS.id=PEDPROD.idProducto WHERE PEDPROD.idPedido=#{id}
+	</select>
+	
+	<update id="cancelarPedido" parameterType="Pedido">
+		UPDATE PEDIDOS SET ESTADO=#{estado} WHERE idPedido=#{idPedido}
+	</update>
+	
+	<insert id="insertarPedido" parameterType="Pedido">
+		INSERT INTO PEDIDOS VALUES (#{idPedido}, #{fechaPedido}, #{precio}, #{comprador}, #{estado})
+	</insert>
+	
+	<insert id="insertarProductoPedido" parameterType="java.util.Map">
+		INSERT INTO PEDPROD (idPedido, idProducto) VALUES (#{idPedido}, #{idProducto})
+	</insert>
+	
+</mapper>

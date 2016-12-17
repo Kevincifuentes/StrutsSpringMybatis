@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+	
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <!--  <package name="default" extends="struts-default">
+		<default-interceptor-ref name="paramsPrepareParamsStack"/>
+        <action name="doLogin" class="es.deusto.masf.appeventos.struts.prueba">
+            <result  name="input">/jsp/login.jsp</result>
+			<result  name="error">/jsp/login.jsp</result>
+			<result>/jsp/loginsuccess.jsp</result>
+        </action>
+    </package>-->
+    <package name="default" extends="struts-default">
+      <action name="user" class="userClass" 
+         method="execute">
+         <result name="success">jsp/User.jsp</result>
+      </action>
+   </package>
+
+
+    <!-- Add packages here -->
+
+</struts>
