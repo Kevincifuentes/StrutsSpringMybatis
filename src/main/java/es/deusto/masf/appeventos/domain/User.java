@@ -5,6 +5,7 @@ public class User {
 
    public String execute()
    {
+	  System.out.println("FirstName: "+ firstName);
       return "success";
    }
 

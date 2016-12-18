@@ -15,8 +15,8 @@
 			<result>/jsp/loginsuccess.jsp</result>
         </action>
     </package>-->
-    <package name="default" extends="struts-default">
-      <action name="user" class="userClass" 
+    <package name="default" namespace="/" extends="struts-default">
+      <action name="userSpringAction" class="userSpringAction" 
          method="execute">
          <result name="success">jsp/User.jsp</result>
       </action>
